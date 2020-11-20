@@ -1,6 +1,6 @@
 # Numpy Deep Learning 'IBrary
 
-This is a fun project that lets me experience what I'm learning about Neural Networks, I started this project a few days befor commencement of my freshman year.
+This is a fun project that lets me experience what I'm learning about Neural Networks, I started this project a few days before the commencement of my freshman year.
 
 
 
@@ -9,7 +9,7 @@ This is a fun project that lets me experience what I'm learning about Neural Net
 
 
 ## HOW TO INSTALL
-There's no need because because TF and PyTorch are already out there showing off the best of their capabilities.
+There's no need because TF and PyTorch are already out there showing off the best of their capabilities.
 ##### But still if you wanna try this(at your own risk) here's how to do it:
 - If you just want to use ndlib:
     - clone/download this repo to your local PC

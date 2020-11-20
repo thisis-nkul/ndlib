@@ -10,13 +10,13 @@ This is a fun project that lets me experience what I'm learning about Neural Net
 
 ## HOW TO INSTALL
 There's no need because because TF and PyTorch are already out there showing off the best of their capabilities.
-#### But still if you wanna try this(at your own risk) here's how to do it:
+##### But still if you wanna try this(at your own risk) here's how to do it:
 - If you just want to use ndlib:
     - clone/download this repo to your local PC
     - open the directory containg setup.py in terminal
     - run:
         ```bash
-        python3 setup.py
+        python3 setup.py install
         ```
     - to uninstall, after running the following code, delete the ndlib folder(super-parent):
         ```bash

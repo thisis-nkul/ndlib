@@ -15,4 +15,5 @@ class MSEloss():
         return self.cost
 
     def backward(self):
-        pass
+        #return dA of last layer
+        return (1/self.m)*(self.Y_hat - self.Y)

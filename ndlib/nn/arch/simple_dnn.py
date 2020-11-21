@@ -5,10 +5,14 @@ import ndlib.nn as nn
 
 class SimpleNN:
     def __init__(self, layer_num, layer_units=[1, 1], initializations = [], activations = [], learning_rate = 0.01):
-        # layer_num: total number of layers excluding input layer
-        # layer_units[i]: number of hidden units in layer i input layer is layer0
-        # initializations: define initialization, 0 in array means default, i.e., HE initialization
-        # activations: activations[i] is activation of (i+1)th layer, if an element is 0: no activation applied
+        '''
+        layer_num: total number of layers excluding input layer
+        layer_units[i]: number of hidden units in layer i input layer is layer0
+        initializations: define initialization, 0 in array means default, i.e., HE initialization
+        activations: activations[i] is activation of (i+1)th layer, if an element is 0: no activation applied
+        learning_rate: pretty obvious
+
+        '''
 
 
         self.layer_num = layer_num

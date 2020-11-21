@@ -46,8 +46,8 @@ class Linear:
 
 ########### UNDER DEVELopment
     def backward(self, dA, batch_size):
-        # DOESN'T WORK WITH SOFTMAX YET.
-    #   self.activation.backward(dA_prev_layer, self.Z, self.A)
+        '''DOESN'T WORK WITH SOFTMAX YET.'''
+    #   intuition: self.activation.prime(dA_prev_layer, self.Z, self.A)
     #   abv code might be wrong but you get the idea, right?
     #   dA = None for last layer, loss
     #   for last layer optimizer/loss_function will provide dZ directly

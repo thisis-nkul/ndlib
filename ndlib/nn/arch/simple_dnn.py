@@ -4,17 +4,18 @@ import ndlib.nn as nn
 
 
 class SimpleNN:
-    def __init__(self, layer_num, layer_units=[1, 1], initializations = [], activations = []):
+    def __init__(self, layer_num, layer_units=[1, 1], initializations = [], activations = [], learning_rate = 0.01):
         # layer_num: total number of layers excluding input layer
         # layer_units[i]: number of hidden units in layer i input layer is layer0
         # initializations: define initialization, 0 in array means default, i.e., HE initialization
-        # activations: activations[i] is activation of (i+1)th layer, if an element is 0: no activation                          applied
+        # activations: activations[i] is activation of (i+1)th layer, if an element is 0: no activation applied
 
 
         self.layer_num = layer_num
         self.layer_units = layer_units
         self.initializations = initializations
         self.activations = activations
+        self.learning_rate = learning_rate
         self.output = None
 
         self.layers = []                #Collection of layers for our NN
@@ -69,3 +70,26 @@ class SimpleNN:
         return self.output
 
     __call__ = forward
+
+    ########UNDER DEVELOPMENT
+
+
+    def backward(self, dA_last_layer, update_params=False):
+        #rn, for the sake of testing, we'll be manually updating params of each layer
+        batch_size = self.layers[0].Z[-1]
+        dA_current_layer = dA_last_layer        #just for initiation
+        for layer in self.layers[1::-1]:
+            if layer != self.layers[0]:
+                dA_current_layer = layer.backward(batch_size, dA_current_layer)
+
+                if(update_params):
+                    self.update_layer_params()
+
+    def update_layer_params(self):
+
+        for layer in self.layers[1::-1]:
+            if layer != self.layers[0]:
+                layer.W = layer.W - self.learning_rate*layer.dW
+                layer.b = layer.b - self.learning_rate*layer.db
+
+    #######################

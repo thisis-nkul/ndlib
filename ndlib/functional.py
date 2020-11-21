@@ -3,14 +3,23 @@ import numpy as np
 def identity(inp):
     return inp
 
+def identity_prime(inp):
+    out = np.ones(inp.shape)
+    return out
+
 def relu(inp):
     return np.maximum(inp, 0)
+
+def relu_prime(inp):
+    return (inp>0).astype(inp.dtype)
 
 def softmax(inp):
     intermediate = np.exp(inp)
 
     return np.divide(intermediate, np.sum(intermediate, axis=0))
     #idk if this is robust
+
+
 
 #----------------------------------------------------------------------------------------------#
 #                                	WEIGHT INITIALIZERS                                        #

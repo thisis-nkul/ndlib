@@ -59,7 +59,7 @@ class Linear:
 
         elif self.activation == 'softmax':
             #assumes softmax is last layer only! use carefully. I'm still learning :P
-            self.dZ = dA                   #A lil' hack
+            self.dZ = dA                   #A lil' hack, CrossEntropyLoss.backward() will output dZ
         #####
 
 

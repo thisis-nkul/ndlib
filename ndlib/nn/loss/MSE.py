@@ -1,12 +1,9 @@
-#import ndlib
+import ndlib
 import numpy as np
 
-class MSEloss():
+class MSELoss(ndlib.Loss):
     def __init__(self, Y_hat, Y, batch_size):
-        self.m = batch_size
-        self.Y = Y
-        self.Y_hat = Y_hat
-        self.cost = None
+        super().__init__(Y_hat, Y, batch_size)
 
     def compute_cost(self):
         self.cost = np.sum((self.Y - self.Y_hat)**2)

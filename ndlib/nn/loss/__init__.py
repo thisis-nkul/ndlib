@@ -1,4 +1,8 @@
-from .MSE import MSEloss
 
 
-__all__ = ['MSEloss']
+from .MSE import MSELoss
+from .CrossEntropy import CrossEntropyLoss
+
+
+
+__all__ = ['MSELoss', 'CrossEntropyLoss']

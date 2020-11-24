@@ -14,7 +14,7 @@ def relu_prime(inp):
     return (inp>0).astype(inp.dtype)
 
 def softmax(inp):
-    intermediate = np.exp(inp)
+    intermediate = np.exp(inp - np.max(inp,axis=0))
 
     return np.divide(intermediate, np.sum(intermediate, axis=0))
     #idk if this is robust

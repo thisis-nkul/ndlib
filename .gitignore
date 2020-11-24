@@ -1,5 +1,6 @@
 #misc.
 .vscode
+.idea
 ndlib.egg-info
 
 #ipynb_checkpoints
